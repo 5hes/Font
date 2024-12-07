@@ -36,7 +36,7 @@ jobs:
         ls -ltrah
         tree
         cd SFCompactFonts/
-        7z x Payload*
+        7z x *pkg*
         
     - name: Check
       run: |
