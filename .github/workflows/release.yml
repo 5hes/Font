@@ -33,6 +33,8 @@ jobs:
       run: |
         wget -q "https://devimages-cdn.apple.com/design/resources/download/SF-Compact.dmg"
         7z x *.dmg
+        ls -ltrah
+        tree
         cd SFCompactFonts/
         7z x Payload*
         
