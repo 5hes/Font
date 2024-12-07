@@ -20,13 +20,13 @@ jobs:
 
     - name: Create a new tag
       run: |
-        TAG_NAME="v0.0.0"
-        git tag $TAG_NAME
-        git push origin $TAG_NAME
+        #TAG_NAME="v0.0.0"
+        #git tag $TAG_NAME
+        #git push origin $TAG_NAME
 
     - name: Download
       run: |
-        wget -q "https://coloros-website-cn.allawnfs.com/font/OPPO_Sans_4.0.zip"
+        wget -q "https://hanyiwebsite.oss-cn-beijing.aliyuncs.com/fonts/HarmonyOS_Sans.zip"
         unzip *.zip
 
     - name: Create Release and Upload Release Asset
