@@ -20,20 +20,25 @@ jobs:
 
     - name: Create a new tag
       run: |
-        #TAG_NAME="v0.0.0"
-        #git tag $TAG_NAME
-        #git push origin $TAG_NAME
+        TAG_NAME="v0.0.1"
+        git tag $TAG_NAME
+        git push origin $TAG_NAME
+
+    - name: Setup environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install p7zip-full
 
     - name: Download
       run: |
-        wget -q "https://hanyiwebsite.oss-cn-beijing.aliyuncs.com/fonts/HarmonyOS_Sans.zip"
-        unzip *.zip
+        wget -q "https://github.com/laishulu/Sarasa-Term-SC-Nerd/releases/download/v2.3.0/SarasaTermSCNerd-Unhinted.ttf.7z"
+        7z x *.7z
 
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: v0.0.0
-        name: opposans
+        tag_name: v0.0.1
+        name: SarasaTermSCNerd-Unhinted
         draft: false
         prerelease: false
         files: |
