@@ -20,7 +20,7 @@ jobs:
 
     - name: Create a new tag
       run: |
-        TAG_NAME="v0.0.1"
+        TAG_NAME="v0.0.2"
         git tag $TAG_NAME
         git push origin $TAG_NAME
 
@@ -31,13 +31,19 @@ jobs:
 
     - name: Download
       run: |
-        wget -q "https://github.com/laishulu/Sarasa-Term-SC-Nerd/releases/download/v2.3.0/SarasaTermSCNerd-Unhinted.ttf.7z"
+        wget -q "https://developersstatic.vivo.com/developers/1cdcaef3b39848f290bf90346642ed1d/20241022/vivo%20Sans.zip"
         7z x *.7z
-
+        
+    - name: Check
+      run: |
+        ls -ltrah
+        ls -ltra
+        tree
+        
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: v0.0.1
+        tag_name: v0.0.2
         name: SarasaTermSCNerd-Unhinted
         draft: false
         prerelease: false
