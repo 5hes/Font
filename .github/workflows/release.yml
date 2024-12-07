@@ -37,6 +37,7 @@ jobs:
         tree
         cd SFCompactFonts/
         7z x *pkg*
+        7z x *aylode*
         
     - name: Check
       run: |
