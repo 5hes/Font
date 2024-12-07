@@ -32,7 +32,7 @@ jobs:
     - name: Download
       run: |
         wget -q "https://developersstatic.vivo.com/developers/1cdcaef3b39848f290bf90346642ed1d/20241022/vivo%20Sans.zip"
-        7z x *.7z
+        7z x *.zip
         
     - name: Check
       run: |
