@@ -20,9 +20,9 @@ jobs:
 
     - name: Create a new tag
       run: |
-        #TAG_NAME="v0.0.4"
-        #git tag $TAG_NAME
-        #git push origin $TAG_NAME
+        TAG_NAME="v0.0.4"
+        git tag $TAG_NAME
+        git push origin $TAG_NAME
 
     - name: Setup environment
       run: |
@@ -34,7 +34,7 @@ jobs:
         wget -O 7z.7z -P Fonts "https://github.com/be5invis/Sarasa-Gothic/releases/download/v1.0.25/SarasaMonoSC-TTF-Unhinted-1.0.25.7z"
         # 7z x *.dmg
 
-        cd font
+        cd Fonts
         7z x 7z.7z
         ls -ltrah
         tree
