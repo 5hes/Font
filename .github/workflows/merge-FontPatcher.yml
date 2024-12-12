@@ -1,0 +1,55 @@
+name: Merge font use NerdFontPatcher
+
+on:
+  workflow_dispatch:
+    inputs:
+      Merge:
+        description: Merge font use NerdFontPatcher
+        required: true
+        type: boolean
+
+# permissions: write-all
+jobs:
+  Merge:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install python3 fontforge python-fontforge argparse
+        pip install otf2ttf
+    - name: Download Patcher
+      run: wget -O Patcher.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FontPatcher.zip"     
+    - name: Unzip
+      run: unzip Patcher.zip -o patcher
+    - name: Download font
+      run: |
+        cd patcher
+        ls -ltrah
+        ls -ltra
+        wget -O CN.otf "https://github.com/ACT-02/PingFang-for-Windows/raw/refs/heads/main/PingFangSC-Regular.otf"
+        wget -O EN.ttf "https://github.com/5hes/Iosevka_fork/releases/download/v0.0.1.5/Iovevka-Regular-Unhinted.ttf"
+        cp ../otf2ttf.ff .
+        fontforge -script otf2ttf.ff CN.otf CN.ttf
+        ls -ltrah
+    - name: Patch
+      run: |
+        cd patcher
+        cp CN.ttf src/glyphs/weather-icons/weathericons-regular-webfont.ttf
+        fontforge -script font-patcher EN.ttf --weather --careful -out target
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Font
+        path: patcher/target/**
+        
+        
+
+
+
+    
+
+
+   
