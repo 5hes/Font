@@ -40,7 +40,7 @@ jobs:
       run: |
         cd patcher
         cp CN.otf src/glyphs/pomicons/Pomicons.otf
-        fontforge -script font-patcher EN.ttf --octicons --careful -out target
+        fontforge -script font-patcher EN.ttf -c --careful -out target
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
