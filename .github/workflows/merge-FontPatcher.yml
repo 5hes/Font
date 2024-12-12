@@ -34,11 +34,13 @@ jobs:
         cp ../otf2ttf.ff .
         fontforge -script otf2ttf.ff CN.otf CN.ttf
         ls -ltrah
+        ls -ltra
+        tree
     - name: Patch
       run: |
         cd patcher
-        cp CN.ttf src/glyphs/weather-icons/weathericons-regular-webfont.ttf
-        fontforge -script font-patcher EN.ttf --weather --careful -out target
+        cp CN.otf src/glyphs/pomicons/Pomicons.otf
+        fontforge -script font-patcher EN.ttf --octicons --careful -out target
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
