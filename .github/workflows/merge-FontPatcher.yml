@@ -18,7 +18,7 @@ jobs:
     - name: Setup environment
       run: |
         sudo apt-get update
-        sudo apt-get install python3 fontforge python-fontforge
+        sudo apt-get install python3 fontforge -y
         pip install otf2ttf
     - name: Download Patcher
       run: wget -O Patcher.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FontPatcher.zip"     
