@@ -23,7 +23,7 @@ jobs:
     - name: Download Patcher
       run: wget -O Patcher.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FontPatcher.zip"     
     - name: Unzip
-      run: unzip Patcher.zip -o patcher
+      run: unzip Patcher.zip -d patcher
     - name: Download font
       run: |
         cd patcher
