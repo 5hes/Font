@@ -21,9 +21,9 @@ jobs:
 
     - name: Create a new tag
       run: |
-        TAG_NAME="v0.0.6"
-        git tag $TAG_NAME
-        git push origin $TAG_NAME
+        # TAG_NAME="v0.0.6"
+        # git tag $TAG_NAME
+        # git push origin $TAG_NAME
 
     - name: Setup environment
       run: |
@@ -32,7 +32,7 @@ jobs:
 
     - name: Download
       run: |
-        wget -O font.zip "https://rubjo.github.io/victor-mono/VictorMonoAll.zip"
+        wget -O font.zip "https://github.com/arrowtype/shantell-sans/releases/download/1.011/Shantell_Sans_1.011.zip"
         # 7z x *.dmg
         
         mkdir Fonts
@@ -55,8 +55,8 @@ jobs:
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: v0.0.5
-        name: NRK-Mono-v2.1.0
+        tag_name: v0.0.6
+        name: Shantell_Sans_1.011
         draft: false
         prerelease: false
         files: |
