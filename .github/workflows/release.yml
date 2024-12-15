@@ -21,9 +21,9 @@ jobs:
 
     - name: Create a new tag
       run: |
-        TAG_NAME="v0.0.5"
-        git tag $TAG_NAME
-        git push origin $TAG_NAME
+        # TAG_NAME="v0.0.5"
+        # git tag $TAG_NAME
+        # git push origin $TAG_NAME
 
     - name: Setup environment
       run: |
@@ -38,7 +38,7 @@ jobs:
         mkdir Fonts
         mv font.tar.zst Fonts/
         cd Fonts
-        7z x font.tar.zst
+        tar -I zstd -xf font.tar.zst
         ls -ltrah
         tree
         
