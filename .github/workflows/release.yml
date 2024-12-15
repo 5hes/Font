@@ -21,9 +21,9 @@ jobs:
 
     - name: Create a new tag
       run: |
-        # TAG_NAME="v0.0.5"
-        # git tag $TAG_NAME
-        # git push origin $TAG_NAME
+        TAG_NAME="v0.0.6"
+        git tag $TAG_NAME
+        git push origin $TAG_NAME
 
     - name: Setup environment
       run: |
@@ -32,13 +32,13 @@ jobs:
 
     - name: Download
       run: |
-        wget -O font.tar.zst "https://github.com/N-R-K/NRK-Mono/releases/download/v2.1.0/NRK-Mono-v2.1.0.tar.zst"
+        wget -O font.zip "https://rubjo.github.io/victor-mono/VictorMonoAll.zip"
         # 7z x *.dmg
         
         mkdir Fonts
-        mv font.tar.zst Fonts/
+        mv font.zip Fonts/
         cd Fonts
-        tar -I zstd -xf font.tar.zst
+        7z x font.zip
         ls -ltrah
         tree
         
