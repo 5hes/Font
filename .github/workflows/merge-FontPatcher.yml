@@ -24,7 +24,7 @@ jobs:
     - name: Setup environment
       run: |
         sudo apt-get update
-        sudo apt-get install fontforge -y
+        sudo apt-get install fontforge python3-fontforge -y
         
     - name: Download Patcher
       run: |
