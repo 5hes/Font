@@ -39,13 +39,15 @@ jobs:
         cd patcher
         wget -O Iover.ttf "https://github.com/5hes/Iosevka_fork/releases/download/v0.0.2-Iover/Iover-Regular.ttf"
         wget -O SukIove.ttf "https://github.com/5hes/Iosevka_fork/releases/download/v0.0.2-Iover/SukIove-Regular.ttf"
+        wget -O JB.otf "https://github.com/JetBrains/JetBrainsMono/raw/refs/heads/master/fonts/otf/JetBrainsMono-SemiBold.otf"
         
     - name: Patch
       run: |
         cd patcher
         chmod 777 font-patcher
-        font-patcher Iover.ttf -c -out target
-        font-patcher SukIove.ttf -c -out target
+        ./font-patcher Iover.ttf -c -out target
+        ./font-patcher SukIove.ttf -c -out target
+        ./font-patcher JB.otf -c -out target
         
     - name: Upload artifact
       uses: actions/upload-artifact@v4
