@@ -16,15 +16,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4.2.2
 
-    - name: Setup Python
-      uses: actions/setup-python@v5.3.0
-      with:
-        python-version: 3.13
+#     - name: Setup Python
+#       uses: actions/setup-python@v5.3.0
+#       with:
+#         python-version: 3.13
     
     - name: Setup environment
       run: |
         sudo apt-get update
-        sudo apt-get install fontforge python3-fontforge -y
+        sudo apt-get install fontforge python3 python3-fontforge -y
         
     - name: Download Patcher
       run: |
