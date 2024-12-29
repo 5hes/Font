@@ -1,10 +1,10 @@
-name: Merge font use NerdFontPatcher
+name: NerdFont patch
 
 on:
   workflow_dispatch:
     inputs:
       Merge:
-        description: Merge font use NerdFontPatcher
+        description: Patch fonts use NerdPatcher
         required: true
         type: boolean
 
@@ -14,33 +14,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4.2.2
+
+    - name: Setup Python
+      uses: actions/setup-python@v5.3.0
+      with:
+        python-version: 3.13
+    
     - name: Setup environment
       run: |
         sudo apt-get update
-        sudo apt-get install python3 fontforge -y
-        pip install otf2ttf
+        sudo apt-get install fontforge -y
+        
     - name: Download Patcher
-      run: wget -O Patcher.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FontPatcher.zip"     
+      run: |
+        wget -O Patcher.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FontPatcher.zip"     
+    
     - name: Unzip
-      run: unzip Patcher.zip -d patcher
+      run: |
+        unzip Patcher.zip -d patcher
+    
     - name: Download font
       run: |
         cd patcher
-        ls -ltrah
-        ls -ltra
-        wget -O CN.otf "https://github.com/ACT-02/PingFang-for-Windows/raw/refs/heads/main/PingFangSC-Regular.otf"
-        wget -O EN.ttf "https://github.com/5hes/Iosevka_fork/releases/download/v0.0.1.5/Iovevka-Regular-Unhinted.ttf"
-        cp ../otf2ttf.ff .
-        fontforge -script otf2ttf.ff CN.otf CN.ttf
-        ls -ltrah
-        ls -ltra
-        tree
+        wget -O Iover.ttf "https://github.com/5hes/Iosevka_fork/releases/download/v0.0.2-Iover/Iover-Regular.ttf"
+        wget -O SukIove.ttf "https://github.com/5hes/Iosevka_fork/releases/download/v0.0.2-Iover/SukIove-Regular.ttf"
+        
     - name: Patch
       run: |
         cd patcher
-        cp CN.otf src/glyphs/pomicons/Pomicons.otf
-        fontforge -script font-patcher EN.ttf -c --careful -out target
+        chmod 777 font-patcher
+        font-patcher Iover.ttf -c -out target
+        font-patcher SukIove.ttf -c -out target
+        
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
