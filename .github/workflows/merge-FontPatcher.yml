@@ -45,15 +45,27 @@ jobs:
       run: |
         cd patcher
         chmod 777 font-patcher
-        ./font-patcher Iover.ttf -c -out target
-        ./font-patcher SukIove.ttf -c -out target
-        ./font-patcher JB.otf -c -out target
+        ./font-patcher Iover.ttf -c -out Iover
+        ./font-patcher SukIove.ttf -c -out SukIove
+        ./font-patcher JB.otf -c -out JB
         
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v4.5.0
       with:
-        name: Font
-        path: patcher/target/**
+        name: Iover
+        path: patcher/Iover/**
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4.5.0
+      with:
+        name: SukIove
+        path: patcher/SukIove/**
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4.5.0
+      with:
+        name: JB
+        path: patcher/JB/**
         
         
 
