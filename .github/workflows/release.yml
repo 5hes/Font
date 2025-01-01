@@ -1,6 +1,7 @@
 name: Download font and release
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       task:
@@ -20,7 +21,7 @@ jobs:
 
     - name: Create a new tag
       run: |
-        TAG_NAME="v0.0.8"
+        TAG_NAME="v0.0.9"
         git tag $TAG_NAME
         git push origin $TAG_NAME
 
@@ -31,7 +32,7 @@ jobs:
 
     - name: Download
       run: |
-        wget -O font.zip "https://github.com/be5invis/Iosevka/releases/download/v32.3.0/PkgTTF-Unhinted-IosevkaFixedSS08-32.3.0.zip"
+        wget -O font.zip "https://github.com/be5invis/Iosevka/releases/download/v32.3.0/PkgTTF-Unhinted-IosevkaFixed-32.3.0.zip"
         # 7z x *.dmg
         
         mkdir Fonts
@@ -54,8 +55,8 @@ jobs:
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: v0.0.8
-        name: Iosevka Pragmata Pro Style
+        tag_name: v0.0.9
+        name: Iosevka Default
         draft: false
         prerelease: false
         files: |
