@@ -21,9 +21,9 @@ jobs:
 
     - name: Create a new tag
       run: |
-        TAG_NAME="v0.1.5"
-        git tag $TAG_NAME
-        git push origin $TAG_NAME
+        # TAG_NAME="v0.1.5"
+        # git tag $TAG_NAME
+        # git push origin $TAG_NAME
 
     - name: Setup environment
       run: |
@@ -58,9 +58,18 @@ jobs:
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: v0.1.5
+        tag_name: v0.1.4
         name: MiLan
         draft: false
         prerelease: false
         files: |
-          Fonts/**
+          Fonts/小米兰亭Pro中粗.ttf
+          Fonts/小米兰亭Pro中黑.ttf
+          Fonts/小米兰亭Pro极细(比细体粗).ttf
+          Fonts/小米兰亭Pro正常.ttf
+          Fonts/小米兰亭Pro特粗.ttf
+          Fonts/小米兰亭Pro粗体.ttf
+          Fonts/小米兰亭Pro细体.ttf
+          Fonts/小米兰亭Pro超粗.ttf
+          Fonts/小米兰亭Pro超细.ttf
+          Fonts/小米兰亭Pro默认.ttf
