@@ -21,9 +21,9 @@ jobs:
 
     - name: Create a new tag
       run: |
-        TAG_NAME="v0.1.6"
-        git tag $TAG_NAME
-        git push origin $TAG_NAME
+        # TAG_NAME="v0.1.6"
+        # git tag $TAG_NAME
+        # git push origin $TAG_NAME
 
     - name: Setup environment
       run: |
@@ -59,7 +59,7 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         tag_name: v0.1.6
-        name: MiLan
+        name: MiLan Pro
         draft: false
         prerelease: false
         files: |
