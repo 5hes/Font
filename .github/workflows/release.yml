@@ -37,7 +37,7 @@ jobs:
         
         # wget -O font.zip "https://openfs.oppomobile.com/open/oop/202412/05/0f155015fff7700fbbcef7fa2aad78dc.zip"
         
-        wget -O font.zip "https://c1029.dmpdmp.com/75e96226d6de56e6100a04c47f7ee529/6777c1d2/2020/08/02/5e6d8da938b1db5e53f2245e59f964c9.zip?fn=%E5%B0%8F%E7%B1%B3%E5%85%B0%E4%BA%ADPro.zip"
+        wget -O font.zip "https://contentplatform-drcn.hihonorcdn.com/developerPlatform/HONOR_Sans_1.2/HONOR_Sans_1.2.zip"
         mkdir Fonts
         mv font.zip Fonts/
         cd Fonts
@@ -50,6 +50,7 @@ jobs:
         # 7z x Payload~
     
     - name: Rename
+      if: env.RENAME == 'true'
       run: |
         cd Fonts
         mv 小米兰亭Pro中粗.ttf MediumBold.ttf
@@ -72,8 +73,8 @@ jobs:
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: v0.1.5
-        name: MiLan Pro
+        tag_name: v0.1.6
+        name: Honor Sans
         draft: false
         prerelease: false
         files: |
