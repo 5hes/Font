@@ -36,7 +36,7 @@ jobs:
         
         # wget -O font.zip "https://openfs.oppomobile.com/open/oop/202412/05/0f155015fff7700fbbcef7fa2aad78dc.zip"
         
-        wget -O font.zip "https://ydown2.jb51.net/font/2021/xmltPro_jb51.rar"
+        wget -O font.zip "https://c1029.dmpdmp.com/75e96226d6de56e6100a04c47f7ee529/6777c1d2/2020/08/02/5e6d8da938b1db5e53f2245e59f964c9.zip?fn=%E5%B0%8F%E7%B1%B3%E5%85%B0%E4%BA%ADPro.zip"
         mkdir Fonts
         mv font.zip Fonts/
         cd Fonts
