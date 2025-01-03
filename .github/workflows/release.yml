@@ -21,9 +21,9 @@ jobs:
 
     - name: Create a new tag
       run: |
-        # TAG_NAME="v0.1.5"
-        # git tag $TAG_NAME
-        # git push origin $TAG_NAME
+        TAG_NAME="v0.1.6"
+        git tag $TAG_NAME
+        git push origin $TAG_NAME
 
     - name: Setup environment
       run: |
@@ -58,7 +58,7 @@ jobs:
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: v0.1.5
+        tag_name: v0.1.6
         name: MiLan
         draft: false
         prerelease: false
