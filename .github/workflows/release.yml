@@ -51,16 +51,17 @@ jobs:
     
     - name: Rename
       run: |
-        mv Fonts/小米兰亭Pro中粗.ttf MediumBold.ttf
-        mv Fonts/小米兰亭Pro中黑.ttf MediumBlack.ttf
-        mv "Fonts/小米兰亭Pro极细(比细体粗).ttf" SuperThin.ttf
-        mv Fonts/小米兰亭Pro正常.ttf Normal.ttf
-        mv Fonts/小米兰亭Pro特粗.ttf SuperBold.ttf
-        mv Fonts/小米兰亭Pro粗体.ttf Bold.ttf
-        mv Fonts/小米兰亭Pro细体.ttf Thin.ttf
-        mv Fonts/小米兰亭Pro超粗.ttf UltimateBold.ttf
-        mv Fonts/小米兰亭Pro超细.ttf UltimateThin.ttf
-        mv Fonts/小米兰亭Pro默认.ttf Default.ttf
+        cd Fonts
+        mv 小米兰亭Pro中粗.ttf MediumBold.ttf
+        mv 小米兰亭Pro中黑.ttf MediumBlack.ttf
+        mv "小米兰亭Pro极细(比细体粗).ttf" SuperThin.ttf
+        mv 小米兰亭Pro正常.ttf Normal.ttf
+        mv 小米兰亭Pro特粗.ttf SuperBold.ttf
+        mv 小米兰亭Pro粗体.ttf Bold.ttf
+        mv 小米兰亭Pro细体.ttf Thin.ttf
+        mv 小米兰亭Pro超粗.ttf UltimateBold.ttf
+        mv 小米兰亭Pro超细.ttf UltimateThin.ttf
+        mv 小米兰亭Pro默认.ttf Default.ttf
 
     - name: Check
       run: |
@@ -71,7 +72,7 @@ jobs:
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: v0.1.6
+        tag_name: v0.1.5
         name: MiLan Pro
         draft: false
         prerelease: false
