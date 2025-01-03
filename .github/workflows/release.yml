@@ -48,7 +48,20 @@ jobs:
         # cd SFCompactFonts/
         # 7z x *pkg*
         # 7z x Payload~
-        
+    
+    - name: Rename
+      run: |
+        mv Fonts/小米兰亭Pro中粗.ttf MediumBold.ttf
+        mv Fonts/小米兰亭Pro中黑.ttf MediumBlack.ttf
+        mv Fonts/小米兰亭Pro极细(比细体粗).ttf SuperThin.ttf
+        mv Fonts/小米兰亭Pro正常.ttf Normal.ttf
+        mv Fonts/小米兰亭Pro特粗.ttf SuperBold.ttf
+        mv Fonts/小米兰亭Pro粗体.ttf Bold.ttf
+        mv Fonts/小米兰亭Pro细体.ttf Thin.ttf
+        mv Fonts/小米兰亭Pro超粗.ttf UltimateBold.ttf
+        mv Fonts/小米兰亭Pro超细.ttf UltimateThin.ttf
+        mv Fonts/小米兰亭Pro默认.ttf Default.ttf
+
     - name: Check
       run: |
         ls -ltrah
@@ -63,13 +76,4 @@ jobs:
         draft: false
         prerelease: false
         files: |
-          Fonts/小米兰亭Pro中粗.ttf
-          Fonts/小米兰亭Pro中黑.ttf
-          Fonts/小米兰亭Pro极细(比细体粗).ttf
-          Fonts/小米兰亭Pro正常.ttf
-          Fonts/小米兰亭Pro特粗.ttf
-          Fonts/小米兰亭Pro粗体.ttf
-          Fonts/小米兰亭Pro细体.ttf
-          Fonts/小米兰亭Pro超粗.ttf
-          Fonts/小米兰亭Pro超细.ttf
-          Fonts/小米兰亭Pro默认.ttf
+          Fonts/**
