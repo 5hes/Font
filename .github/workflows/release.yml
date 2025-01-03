@@ -58,7 +58,7 @@ jobs:
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: v0.1.4
+        tag_name: v0.1.5
         name: MiLan
         draft: false
         prerelease: false
