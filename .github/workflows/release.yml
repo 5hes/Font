@@ -21,9 +21,9 @@ jobs:
 
     - name: Create a new tag
       run: |
-        # TAG_NAME="v0.1.6"
-        # git tag $TAG_NAME
-        # git push origin $TAG_NAME
+        TAG_NAME="v0.1.7"
+        git tag $TAG_NAME
+        git push origin $TAG_NAME
 
     - name: Setup environment
       run: |
@@ -37,7 +37,7 @@ jobs:
         
         # wget -O font.zip "https://openfs.oppomobile.com/open/oop/202412/05/0f155015fff7700fbbcef7fa2aad78dc.zip"
         
-        wget -O font.zip "https://contentplatform-drcn.hihonorcdn.com/developerPlatform/HONOR_Sans_1.2/HONOR_Sans_1.2.zip"
+        wget -O font.zip "https://github.com/be5invis/Iosevka/releases/download/v32.3.1/PkgTTF-Unhinted-IosevkaFixedCurlySlab-32.3.1.zip"
         mkdir Fonts
         mv font.zip Fonts/
         cd Fonts
@@ -73,8 +73,8 @@ jobs:
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: v0.1.6
-        name: Honor Sans
+        tag_name: v0.1.7
+        name: IosevkaFixedCurlySlab
         draft: false
         prerelease: false
         files: |
